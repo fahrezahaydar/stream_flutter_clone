@@ -1,0 +1,40 @@
+my_flutter_app/
+├── android/
+├── assets/
+
+├── ios/
+├── lib/
+│   ├── presentation/*
+│   │   ├── screens/
+│   │   │   └── home_screen.dart
+│   │   ├── controllers/
+│   │   │   └── home_controller.dart
+|   |── domain/*
+│   │   ├──core/*
+│   │   |   ├──assets/
+│   │   |   │   ├── fonts/
+│   │   |   │   │   └── my_custom_font.ttf
+│   │   |   │   ├── images/
+│   │   │   │   │   └── logo.png
+│   │   │   |   └── icons/
+│   │   │   │   │   └── icon.svg
+│   │   └──library.dart
+│   ├── infrastructure/*
+│   │   ├── constants/
+│   │   |   └── constants.dart
+│   │   ├── dal/*
+│   │   |   ├── daos/*
+│   │   |   └── services/*
+│   │   ├── navigation/*
+│   │   |   ├── binding/*
+│   │   |   ├── navigation.dart*
+│   │   |   └── routes.dart*
+│   │   └── theme/*
+│   │   |   ├── complex_widgets.dart
+│   │   |   ├── widgets.dart
+│   │   |   ├── theme.dart*
+│   │   |   ├── color_theme.dart
+│   │   |   └── text_theme.dart
+│   ├── main.dart
+├── pubspec.yaml
+├── ...
