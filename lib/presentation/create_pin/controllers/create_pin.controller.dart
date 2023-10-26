@@ -26,6 +26,8 @@ class CreatePinController extends GetxController {
     });
     ever(confirmPin, (value) {
       if (value == verifPin.value) {
+        Get.snackbar("Success", "Account Has Been Created",
+            backgroundColor: Theme.of(Get.context!).colorScheme.tertiary);
         Get.toNamed(Routes.LANDING);
       }
     });

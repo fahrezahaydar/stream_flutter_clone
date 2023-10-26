@@ -11,9 +11,6 @@ class AuthenticationScreen extends GetView<AuthenticationController> {
     final color = Theme.of(context).colorScheme;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        themeController.toggleTheme();
-      }),
       appBar: AppBar(
         actions: [
           IconButton(icon: const Icon(Icons.help_outline), onPressed: () {})

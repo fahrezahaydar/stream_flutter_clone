@@ -22,6 +22,7 @@ class LandingScreen extends GetView<LandingController> {
                       decoration: BoxDecoration(
                           color: color.primary,
                           borderRadius: BorderRadius.circular(12)),
+                      child: const Logo(),
                     ),
                     Text(
                       'Stream',

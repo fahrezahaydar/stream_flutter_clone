@@ -66,6 +66,7 @@ class Keyboard extends StatelessWidget {
     double? rowSpacing,
   }) {
     color ??= Theme.of(Get.context!).colorScheme.onBackground;
+    rowSpacing = Get.height > 800 ? 20 : 10;
     return Keyboard(
       key: key,
       pin: pin,
@@ -83,6 +84,8 @@ class Keyboard extends StatelessWidget {
     Color? color,
     double? rowSpacing,
   }) {
+    rowSpacing = Get.height > 800 ? 20 : 10;
+
     color ??= Theme.of(Get.context!).colorScheme.onBackground;
     return Keyboard(
       key: key,

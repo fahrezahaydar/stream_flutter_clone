@@ -111,7 +111,7 @@ class Profile extends StatelessWidget {
               ),
             ),
           ),
-          Divider(height: 10),
+          VerticalSpace(spacerM),
           Widgets().profileMenu('Account Information', onPressed: () {}),
           Widgets().profileMenu('Personal Information', onPressed: () {}),
           Widgets().profileMenu('Device Information', onPressed: () {}),
@@ -133,7 +133,6 @@ class Notification extends StatelessWidget {
   final controller = Get.find<HomeController>();
   final textStyle = Theme.of(Get.context!).textTheme;
   final color = Theme.of(Get.context!).colorScheme;
-  final themeController = Get.find<ThemeController>();
 
   @override
   Widget build(BuildContext context) {
@@ -142,9 +141,7 @@ class Notification extends StatelessWidget {
             Widgets().contentHeader(
                 icon: Icons.more_vert,
                 title: "Notification & Message",
-                onPressed: () {
-                  themeController.toggleTheme();
-                }),
+                onPressed: () {}),
             Row(
               children: [
                 TextButton(
@@ -503,7 +500,7 @@ class Home extends StatelessWidget {
                             borderRadius: BorderRadius.circular(spacerS)),
                         child: Icon(Icons.credit_card, color: Colors.white),
                       ),
-                      subtitle: Text(" • • • • 5 60 7 8",
+                      subtitle: Text(" • • • • 5 6 7 8",
                           style: textStyle.labelMedium),
                       trailing:
                           Text("20.400.000", style: textStyle.displaySmall)),

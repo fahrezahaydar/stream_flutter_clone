@@ -1,14 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:stream/domain/library.dart';
-import 'package:stream/presentation/home/controllers/home.controller.dart';
 
 import 'controllers/test.controller.dart';
 
 class TestScreen extends GetView<TestController> {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final color = Theme.of(context).colorScheme;
     return Obx(() => Scaffold(
         body: SafeArea(child: Text("${controller.selectedIndex.value}")),

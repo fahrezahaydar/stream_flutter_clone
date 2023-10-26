@@ -12,7 +12,7 @@ class CardCenterScreen extends GetView<CardCenterController> {
     final color = Theme.of(context).colorScheme;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Card Center'),
+        title: const Text('Card Info'),
         centerTitle: true,
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
@@ -61,157 +61,98 @@ class CardCenterScreen extends GetView<CardCenterController> {
                       ],
                     ),
                     VerticalSpace(spacerM),
-                    Divider(thickness: 3),
+                    Divider(
+                      thickness: 3,
+                      color: color.outline,
+                    ),
                     Padding(
                       padding: EdgeInsets.all(spacerXl),
                       child: Column(
                         children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Active balance',
-                                      style: textStyle.labelLarge),
-                                  VerticalSpace(spacerXs),
-                                  Text(
-                                      controller
-                                          .formatCurrency(controller.amount),
-                                      style: textStyle.displaySmall),
-                                ],
-                              ),
-                              Spacer(),
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.lock_outline,
-                                          color: color.primary),
-                                      HorizontalSpace(spacerXs),
-                                      Text(
-                                        "Show CVV",
-                                        style: textStyle.displaySmall
-                                            ?.copyWith(color: color.primary),
-                                      ),
-                                      HorizontalSpace(spacerS),
-                                    ],
-                                  ))
-                            ],
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            title: Text('Active balance',
+                                style: textStyle.labelLarge),
+                            subtitle: Text(
+                                controller.formatCurrency(controller.amount),
+                                style: textStyle.displaySmall),
+                            trailing: TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "Show CVV",
+                                  style: textStyle.displaySmall
+                                      ?.copyWith(color: color.primary),
+                                )),
+                          ),
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            title: Text('Single Purchase Limit',
+                                style: textStyle.labelLarge),
+                            subtitle: Text(
+                                controller.formatCurrency(controller.amount),
+                                style: textStyle.bodyMedium),
+                          ),
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            title: Text('ATM Withdrawn Limit',
+                                style: textStyle.labelLarge),
+                            subtitle: Text(
+                                controller.formatCurrency(controller.amount),
+                                style: textStyle.bodyMedium),
                           ),
                           VerticalSpace(spacerM),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Single Purchase Limit',
-                                      style: textStyle.labelLarge),
-                                  VerticalSpace(spacerXs),
-                                  Text(
-                                      controller
-                                          .formatCurrency(controller.amount),
-                                      style: textStyle.bodyMedium),
-                                ],
-                              ),
-                              Spacer(),
-                              FlatButton.icon(Icons.more_vert,
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                      alignment: Alignment.centerRight))
-                            ],
-                          ),
-                          VerticalSpace(spacerM),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('ATM Withdrawn Limit',
-                                      style: textStyle.labelLarge),
-                                  VerticalSpace(spacerXs),
-                                  Text(
-                                      controller
-                                          .formatCurrency(controller.amount),
-                                      style: textStyle.bodyMedium),
-                                ],
-                              ),
-                              Spacer(),
-                              FlatButton.icon(Icons.more_vert,
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                      alignment: Alignment.centerRight))
-                            ],
-                          ),
-                          VerticalSpace(spacerM),
-                          TextButton(
-                            onPressed: () {
-                              print('Test');
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            onTap: () {
+                              print('Test1');
                             },
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: 48,
-                                  width: 48,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: color.primary),
-                                  child:
-                                      Icon(Icons.dialpad, color: Colors.white),
-                                ),
-                                HorizontalSpace(spacerS),
+                            leading: Container(
+                              height: 48,
+                              width: 48,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: color.primary),
+                              child: Icon(Icons.dialpad, color: Colors.white),
+                            ),
+                            title:
                                 Text("Change PIN", style: textStyle.bodyMedium),
-                                Spacer()
-                              ],
-                            ),
                           ),
                           VerticalSpace(spacerM),
-                          TextButton(
-                            onPressed: () {
-                              print('Test');
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            onTap: () {
+                              print('Test12');
                             },
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: 48,
-                                  width: 48,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: color.primary),
-                                  child: Icon(Icons.credit_card_off_outlined,
-                                      color: Colors.white),
-                                ),
-                                HorizontalSpace(spacerS),
+                            leading: Container(
+                              height: 48,
+                              width: 48,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: color.primary),
+                              child: Icon(Icons.credit_card_off_outlined,
+                                  color: Colors.white),
+                            ),
+                            title:
                                 Text("Block Card", style: textStyle.bodyMedium),
-                                Spacer()
-                              ],
-                            ),
                           ),
                           VerticalSpace(spacerM),
-                          TextButton(
-                            onPressed: () {
-                              print('Test');
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            onTap: () {
+                              print('Test12');
                             },
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: 48,
-                                  width: 48,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: color.primary),
-                                  child: Icon(Icons.credit_card,
-                                      color: Colors.white),
-                                ),
-                                HorizontalSpace(spacerS),
-                                Text("Change Limit",
-                                    style: textStyle.bodyMedium),
-                                Spacer()
-                              ],
+                            leading: Container(
+                              height: 48,
+                              width: 48,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: color.primary),
+                              child:
+                                  Icon(Icons.credit_card, color: Colors.white),
                             ),
-                          )
+                            title: Text("Change Limit",
+                                style: textStyle.bodyMedium),
+                          ),
                         ],
                       ),
                     )

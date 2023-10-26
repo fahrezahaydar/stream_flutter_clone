@@ -93,7 +93,10 @@ class InputPinScreen extends GetView<InputPinController> {
             ),
           ),
           const Spacer(flex: 2),
-          Keyboard.forPin(pin: controller.pin, color: Colors.white),
+          Keyboard.forPin(
+            pin: controller.pin,
+            color: Colors.white,
+          ),
           const Spacer(flex: 1),
         ],
       )),

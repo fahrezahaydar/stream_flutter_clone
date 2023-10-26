@@ -14,9 +14,6 @@ class SignInScreen extends GetView<SignInController> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        themeController.toggleTheme();
-      }),
       body: Column(
         children: [
           Padding(
@@ -76,6 +73,7 @@ class SignInScreen extends GetView<SignInController> {
           )),
           PrimaryButton("Login", onPressed: () {
             Get.offAllNamed(Routes.INPUT_PIN);
+            print('${Get.width},${Get.height}');
           })
         ],
       ),
